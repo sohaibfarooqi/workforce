@@ -26,5 +26,5 @@ for more info.
 
 The DAG in this project looks like this:
 
-![alt text](https://uxsjdg.bn1302.livefilestore.com/y4pJ2WaWIXSBYItHO1EMh4f3bqP8ZmA8mmsaFnHNtrIB9CMpKjr4r11V1OqN5Z8Dz-MNxWfROczYW7vWgZprXqK51WDMdwMw7m-mdk4p0VZSY-HZ6mRhWOQM8eC4vrQXZ9Fp-HW5jmaTQH0lkJpaTda9sbkguoJhBYKHlYv_PYQwdKRZSYI0LR-xygdLnl8qizhoAdPfYpB3eC2bVrfoc4dqA/workflow.png?psid=1)
+![alt text](https://uxsjdg.bn1302.livefilestore.com/y4m1IrYcF6e_DCqV9j5RrIXWxQskpU0jigJHltHRna3gQqU2J80xh0goo0wzxJIAV2D7iT6vrOFV9rumSc_UEKofqdvg-B_7tBGUkJbMYjUOFcBVBndqOqVwI91EJwZ_j1C3C7VCSeQsidW2px9D7jeQc5Cq8RuJcpsfCQ5_aGB1KCAEzmbNS0JKe9KnpPqtTJp1WtZwoX3KbkhbXphOHgT-g?width=757&height=347&cropmode=none)
 
