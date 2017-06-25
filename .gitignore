@@ -1,0 +1,14 @@
+#Python byte code files
+*.pyc
+*.db
+*~
+
+
+#Virtual Environments
+venv
+env
+site
+
+#Airflow files
+airflow-webserver.pid
+logs

@@ -1,0 +1,1 @@
+airflow[s3, async, celery, crypto, password, rabbitmq, postgres]==1.8
