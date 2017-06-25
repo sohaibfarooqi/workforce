@@ -34,9 +34,9 @@ The DAG in this project looks like this:
 
  - **Fetch Entity**
 
- 		This task will query an external service to fetch entity or list of entities. It invlove
- 		querying an API and upon successful response it will forward the received data for validation.
- 		Note that this is PythonOperator. It has a python callable registered in DAG definition.
+	This task will query an external service to fetch entity or list of entities. It invlove
+	querying an API and upon successful response it will forward the received data for validation.
+	Note that this is PythonOperator. It has a python callable registered in DAG definition.
  			
  - **Validate Entity**
  - **Failed Validation**
