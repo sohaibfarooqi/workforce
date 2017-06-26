@@ -37,15 +37,47 @@ The DAG in this project looks like this:
 	This task will query an external service to fetch entity or list of entities. It invlove
 	querying an API and upon successful response it will forward the received data for validation.
 	Note that this is PythonOperator. It has a python callable registered in DAG definition.
- 			
+
  - **Validate Entity**
+
+ 	This task will validate all individual fields on entity received by `Fetch Entity` task.
+ 	Validation rules can range from checking email formate to analyzing abusive words in content.
+ 	This is BranchPythonOperator, it will trigger next task based on whether the task return 
+ 	`True` or `False`.
+
  - **Failed Validation**
- 
+ 	
+ 	This task is triggered in case of `Validate Entity` return False. It will notify the user 
+ 	with the appropriate cause of failure and will terminate any further processing on task.
+ 	This is also a PythonOperator.
+
  - **Continue**
-  
+  	
+  	This task will get triggered in case of `Validate Entity` returns `True`. It is a DummyOperator
+  	and its only use it to link the successive tasks in the workflow.
+
   - **Insert Entity**
+  	
+  	This task will feed the entity to main datastore. Main datastore typically is a SQL(MySQL or PostgreSQL) store or a NoSQL store (MongoDB, DynamoDB). It is a PythonOperator.
+
   - **Upload Original Photo**
+  	
+  	This task will upload original image(s) of the entity to a CDN provider(Amazon S3). This would 
+  	typically used for reference and could be utilized in order to generate resize images in different 
+  	dimentions at any point in time. This is also a PythonOperator.
+
   - **Upload Resize Photos**
+
+  	This task will resize the images(Using Pillow Python library) according to application needs
+  	and will upload to CDN provider(Amazon S3). This is also a PythonOperator.
+
   - **Insert ES**
 
+  	This task will insert the entity into Elastic-Search so that it is available for search
+  	for end users. This is also a PythonOperator.
+
  - **Email Notification**
+
+ 	This task send Email Notification to the user when all of its upstream tasks gets processed
+ 	successfully. This is default behaviour in Airflow. If a task has several or one upstream tasks,
+ 	it will only gets triggered once all task has been successfully processed. However this can be modified. Check [Trigger Rules](http://pythonhosted.org/airflow/concepts.html#trigger-rules) for more info. This is also a PythonOperator.
